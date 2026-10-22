@@ -3,7 +3,7 @@ layout: post
 title: "أصل طائر الكناري وقصة اكتشافه: الدليل الشامل لتهجين الكناري وإنتاج طفرات نادرة"
 date: 2026-10-21
 categories: [عالم-الكناري]
-image: "[https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTxnK-8PDpAWJSV9Df6eVhoFLMjj9am53Ke5JZO_9IKi5W2fwhSzwx0Jp4PD16ZpDag9TolkCiOJiRVG8s](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYUeNF-XpHC9pZS2L3dC12uWltC0pbCUC9czQs5UntHWUNWFbcXlembfPmiQdtNFFdE-FE_JKPJWk_CxvMGUF-kly1VBTv3tmMO7lSDkFr7J0wp8eUdCvOLs39jShC0bwMGtFQx54SEH3QHnqgGbGB_jMXry-RucTKXTG77ViNTEoBpwuhVNLZN8FxU50/w945-h600-p-k-no-nu/canary-origin.jpg)"
+image: "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTxnK-8PDpAWJSV9Df6eVhoFLMjj9am53Ke5JZO_9IKi5W2fwhSzwx0Jp4PD16ZpDag9TolkCiOJiRVG8s](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYUeNF-XpHC9pZS2L3dC12uWltC0pbCUC9czQs5UntHWUNWFbcXlembfPmiQdtNFFdE-FE_JKPJWk_CxvMGUF-kly1VBTv3tmMO7lSDkFr7J0wp8eUdCvOLs39jShC0bwMGtFQx54SEH3QHnqgGbGB_jMXry-RucTKXTG77ViNTEoBpwuhVNLZN8FxU50/w945-h600-p-k-no-nu/canary-origin.jpg"
 ---
 
 يُعتبر طائر الكناري (*Serinus canaria*) واحداً من أكثر طيور الزينة شهرة وانتشاراً في العالم، ويمتلك تاريخاً مثيراً يبدأ من البراري الساحرة وينتهي داخل أشهر دور التربية والإنتاج العالمية. 
