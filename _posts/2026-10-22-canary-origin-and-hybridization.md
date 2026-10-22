@@ -3,7 +3,7 @@ layout: post
 title: "أصل طائر الكناري وقصة اكتشافه: الدليل الشامل لتهجين الكناري وإنتاج طفرات نادرة"
 date: 2026-10-21
 categories: [عالم-الكناري]
-image: "[https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=1200&q=80](https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTxnK-8PDpAWJSV9Df6eVhoFLMjj9am53Ke5JZO_9IKi5W2fwhSzwx0Jp4PD16ZpDag9TolkCiOJiRVG8s)"
+image: "[https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTxnK-8PDpAWJSV9Df6eVhoFLMjj9am53Ke5JZO_9IKi5W2fwhSzwx0Jp4PD16ZpDag9TolkCiOJiRVG8s)"
 ---
 
 يُعتبر طائر الكناري (*Serinus canaria*) واحداً من أكثر طيور الزينة شهرة وانتشاراً في العالم، ويمتلك تاريخاً مثيراً يبدأ من البراري الساحرة وينتهي داخل أشهر دور التربية والإنتاج العالمية. 
