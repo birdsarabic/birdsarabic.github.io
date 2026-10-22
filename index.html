@@ -15,7 +15,6 @@ layout: null
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Tajawal', sans-serif; background-color: #f8f9fa; color: #2c3e50; direction: rtl; text-align: right; line-height: 1.6; }
 
-        /* 1. الهيدر العلوي - أخضر فاتح جذاب */
         header {
             background-color: #2ec4b6;
             padding: 1rem 2rem;
@@ -34,7 +33,6 @@ layout: null
         .main-pages-menu a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
         .main-pages-menu a:hover { color: #e6f9f5; text-decoration: underline; }
 
-        /* 2. قسم الهيرو banner - أخضر فاتح مبهج */
         .hero {
             background: linear-gradient(rgba(46, 196, 182, 0.88), rgba(32, 163, 158, 0.88)), url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1200&q=80') center/cover;
             color: white;
@@ -45,7 +43,6 @@ layout: null
         .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
         .hero p { font-size: 1.1rem; opacity: 0.95; }
 
-        /* 3. شريط الأقسام والتصنيفات */
         .category-bar {
             background-color: #ffffff;
             border-bottom: 2px solid #b2f2bb;
@@ -81,9 +78,9 @@ layout: null
         }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-        .section-title { font-size: 1.6rem; color: #1b8a7f; margin-bottom: 1.5rem; border-right: 5px solid #2ec4b6; padding-right: 12px; font-weight: 700; }
+        .section-title { font-size: 1.6rem; color: #1b8a7f; margin-bottom: 1.5rem; border-right: 5px solid #2ec4b6; padding-right: 12px; font-weight: 700; scroll-margin-top: 80px; }
 
-        .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
         .post-card { background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
         .post-card img { width: 100%; height: 180px; object-fit: cover; }
         .post-card-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
@@ -93,7 +90,6 @@ layout: null
         .post-card-excerpt { color: #666; font-size: 0.9rem; margin-bottom: 1.2rem; flex-grow: 1; }
         .read-more { color: #2ec4b6; text-decoration: none; font-weight: 700; }
 
-        /* 4. الفوتر - أخضر فاتح متناسق */
         footer {
             background-color: #20a39e;
             color: white;
@@ -131,19 +127,20 @@ layout: null
     <nav class="category-bar">
         <ul class="category-menu">
             <li><a href="{{ site.baseurl }}/" class="active">الرئيسية</a></li>
-            <li><a href="{{ site.baseurl }}/#canary">عالم الكناري</a></li>
-            <li><a href="{{ site.baseurl }}/#goldfinch">طائر الحسون</a></li>
-            <li><a href="{{ site.baseurl }}/#parrots">طيور الببغاء</a></li>
-            <li><a href="{{ site.baseurl }}/#birds-world">عالم الطيور</a></li>
-            <li><a href="{{ site.baseurl }}/#health">الطيور والصحة</a></li>
+            <li><a href="#canary">عالم الكناري</a></li>
+            <li><a href="#goldfinch">طائر الحسون</a></li>
+            <li><a href="#parrots">طيور الببغاء</a></li>
+            <li><a href="#birds-world">عالم الطيور</a></li>
+            <li><a href="#health">الطيور والصحة</a></li>
         </ul>
     </nav>
 
     <main class="container">
-        <h2 class="section-title">أحدث المقالات</h2>
         
+        <!-- قسم أحدث المقالات العامة -->
+        <h2 class="section-title">أحدث المقالات</h2>
         <div class="posts-grid">
-            {% for post in site.posts %}
+            {% for post in site.posts limit:6 %}
             <article class="post-card">
                 {% if post.image %}
                 <img src="{{ post.image }}" alt="{{ post.title }}">
@@ -157,18 +154,47 @@ layout: null
                     {% endif %}
                     
                     <h3 class="post-card-title">
-                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                     </h3>
                     
                     <p class="post-card-excerpt">
                         {{ post.excerpt | strip_html | truncate: 100 }}
                     </p>
                     
-                    <a href="{{ post.url | relative_url }}" class="read-more">اقرأ المقال كاملاً ←</a>
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="read-more">اقرأ المقال كاملاً ←</a>
                 </div>
             </article>
             {% endfor %}
         </div>
+
+        <!-- قسم عالم الكناري -->
+        <h2 id="canary" class="section-title">عالم الكناري</h2>
+        <div class="posts-grid">
+            {% assign canary_posts = site.posts | where_exp: "item", "item.categories contains 'عالم-الكناري'" %}
+            {% for post in canary_posts %}
+            <article class="post-card">
+                {% if post.image %}
+                <img src="{{ post.image }}" alt="{{ post.title }}">
+                {% else %}
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="صورة الكناري">
+                {% endif %}
+                
+                <div class="post-card-content">
+                    <span class="category-badge">عالم الكناري</span>
+                    <h3 class="post-card-title">
+                        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="post-card-excerpt">
+                        {{ post.excerpt | strip_html | truncate: 100 }}
+                    </p>
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="read-more">اقرأ المقال كاملاً ←</a>
+                </div>
+            </article>
+            {% else %}
+            <p style="color: #777;">لا توجد مقالات مضافة في هذا القسم حالياً.</p>
+            {% endfor %}
+        </div>
+
     </main>
 
     <footer>
