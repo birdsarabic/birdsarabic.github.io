@@ -1,0 +1,183 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | طيور العرب</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            direction: rtl;
+            text-align: right;
+            line-height: 1.8;
+        }
+
+        header {
+            background-color: #0e6251;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo a { color: #ffffff; text-decoration: none; font-size: 1.8rem; font-weight: 800; }
+        
+        .main-pages-menu { list-style: none; display: flex; gap: 1.5rem; }
+        .main-pages-menu a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
+        .main-pages-menu a:hover, .main-pages-menu a.active { color: #d4ac0d; }
+
+        .contact-container {
+            max-width: 750px;
+            margin: 3rem auto;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .contact-header h1 {
+            font-size: 2.2rem;
+            color: #0e6251;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .contact-header p {
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid #dcdde1;
+            border-radius: 8px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #0e6251;
+            box-shadow: 0 0 5px rgba(14, 98, 81, 0.2);
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .btn-submit {
+            background-color: #0e6251;
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Tajawal', sans-serif;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #0b4f41;
+        }
+
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { padding: 1.8rem; margin: 1.5rem; }
+            .navbar { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="{{ site.baseurl }}/">🦜 طيور العرب</a></div>
+            <ul class="main-pages-menu">
+                <li><a href="{{ site.baseurl }}/">الرئيسية</a></li>
+                <li><a href="{{ site.baseurl }}/about.html">من نحن</a></li>
+                <li><a href="{{ site.baseurl }}/contact.html" class="active">اتصل بنا</a></li>
+                <li><a href="{{ site.baseurl }}/privacy.html">سياسة الخصوصية</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <div class="contact-header">
+            <h1>تواصل معنا</h1>
+            <p>يسعدنا استقبال استفساراتكم ومقترحاتكم حول تربية العناية بالطيور</p>
+        </div>
+
+        <!-- بداية نموذج الاتصال -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            
+            <div class="form-group">
+                <label for="name">اسم المتصل</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="أدخل اسمك الكامل" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="_replyto" class="form-control" placeholder="example@domain.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">عنوان الاتصال (الموضوع)</label>
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="موضوع الرسالة" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">مكان الرسالة (المحتوى)</label>
+                <textarea id="message" name="message" class="form-control" placeholder="اكتب نص رسالتك هنا..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">📤 إرسال الرسالة</button>
+            
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 طيور العرب - جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
