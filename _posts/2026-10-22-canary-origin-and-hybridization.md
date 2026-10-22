@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "أصل طائر الكناري وقصة اكتشافه: الدليل الشامل لتهجين الكناري وإنتاج طفرات نادرة"
-date: 2026-10-22
+date: 2026-10-21
 categories: [عالم-الكناري]
 image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80"
 ---
