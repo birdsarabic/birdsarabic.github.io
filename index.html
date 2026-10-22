@@ -1,10 +1,11 @@
+---
+---
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>طيور العرب | عالم الطيور والبيئة الطبيعية</title>
-    <!-- خط تجوال العربي من Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -18,11 +19,7 @@
             --card-bg: #ffffff;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Tajawal', sans-serif;
@@ -31,7 +28,6 @@
             line-height: 1.6;
         }
 
-        /* الهيدر وشريط التنقل */
         header {
             background-color: var(--primary-color);
             color: white;
@@ -47,50 +43,16 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
+        .logo { font-size: 1.8rem; font-weight: 800; }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* القسم الترحيبي الرئيسية */
         .hero {
             background: linear-gradient(rgba(14, 98, 81, 0.85), rgba(14, 98, 81, 0.85)), 
                         url('https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=80') center/cover;
             color: white;
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-        }
-
-        /* شبكة المقالات */
         .container {
             max-width: 1100px;
             margin: 3rem auto;
@@ -102,7 +64,6 @@
             font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 2rem;
-            position: relative;
         }
 
         .grid {
@@ -114,64 +75,36 @@
         .card {
             background-color: var(--card-bg);
             border-radius: 10px;
-            overflow: hidden;
+            padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             transition: transform 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+        .card:hover { transform: translateY(-5px); }
 
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-tag {
-            background-color: #e8f8f5;
-            color: var(--primary-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 5px;
+        .card-date {
             font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .card-title a {
+            font-size: 1.3rem;
+            color: #1a252f;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
             font-weight: 700;
         }
 
-        .card-title {
-            font-size: 1.3rem;
-            margin: 0.8rem 0 0.5rem;
-            color: #1a252f;
-        }
+        .card-title a:hover { color: var(--accent-color); }
 
-        .card-desc {
-            font-size: 0.95rem;
-            color: #7f8c8d;
-            margin-bottom: 1rem;
-        }
-
-        /* الفوتر */
         footer {
             background-color: #1a252f;
             color: white;
             text-align: center;
             padding: 2rem 1rem;
             margin-top: 4rem;
-        }
-
-        /* التجاوب مع الجوال */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
         }
     </style>
 </head>
@@ -180,53 +113,29 @@
     <header>
         <nav class="navbar">
             <div class="logo">🦜 طيور العرب</div>
-            <ul class="nav-links">
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">أنواع الطيور</a></li>
-                <li><a href="#">الهجرة والمواطن</a></li>
-                <li><a href="#">عن المدونة</a></li>
-            </ul>
         </nav>
     </header>
 
     <section class="hero">
         <h1>مرحباً بكم في مدونة طيور العرب</h1>
-        <p>مساحتكم الخاصة لاكتشاف عالم الطيور في الوطن العربي، العناية بها، والتعرف على أشهر أنواعها الساحرة.</p>
+        <p>مساحتكم الخاصة لاكتشاف عالم الطيور والعناية بها.</p>
     </section>
 
     <main class="container">
         <h2 class="section-title">أحدث المقالات</h2>
         
         <div class="grid">
-            <!-- كارت مقال 1 -->
+            {% for post in site.posts %}
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=600&q=80" alt="طائر الحسون" class="card-img">
-                <div class="card-content">
-                    <span class="card-tag">طيور الزينة</span>
-                    <h3 class="card-title">طائر الحسون: أسرار التغريد والتغذية</h3>
-                    <p class="card-desc">تعرف على أهم النصائح اليومية لتربية طائر الحسون والعناية بصحته ونظامه الغذائي.</p>
-                </div>
+                <span class="card-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                <h3 class="card-title">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                </h3>
+                <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
             </article>
-
-            <!-- كارت مقال 2 -->
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1611689342806-0863700ce1e4?auto=format&fit=crop&w=600&q=80" alt="الصقر الشاهين" class="card-img">
-                <div class="card-content">
-                    <span class="card-tag">الطيور الجارحة</span>
-                    <h3 class="card-title">الصقر الشاهين: أسرع كائن على وجه الأرض</h3>
-                    <p class="card-desc">استكشف القدرات الفائقة للصقر الشاهين ومكانته الخاصة في الثقافة والتراث العربي.</p>
-                </div>
-            </article>
-
-            <!-- كارت مقال 3 -->
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1549608276-5786777e6587?auto=format&fit=crop&w=600&q=80" alt="طيور النحام" class="card-img">
-                <div class="card-content">
-                    <span class="card-tag">الطيور المائية</span>
-                    <h3 class="card-title">طيور الفلامنجو في المحميات العربية</h3>
-                    <p class="card-desc">رحلة بين المحميات الطبيعية التي تستقبل طيور الفلامنجو (النحام) أثناء مواسم الهجرة.</p>
-                </div>
-            </article>
+            {% else %}
+            <p style="text-align: center; grid-column: 1/-1;">لا يوجد مقالات حتى الآن.</p>
+            {% endfor %}
         </div>
     </main>
 
