@@ -1,0 +1,241 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | الموسوعة الشاملة لطيور العرب</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            direction: rtl;
+            text-align: right;
+            line-height: 2;
+        }
+
+        header {
+            background-color: #0e6251;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo a { color: #ffffff; text-decoration: none; font-size: 1.8rem; font-weight: 800; }
+        
+        .main-pages-menu { list-style: none; display: flex; gap: 1.5rem; }
+        .main-pages-menu a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
+        .main-pages-menu a:hover, .main-pages-menu a.active { color: #d4ac0d; }
+
+        .about-hero {
+            background: linear-gradient(rgba(14, 98, 81, 0.9), rgba(14, 98, 81, 0.9)), url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            margin-bottom: 3rem;
+        }
+        .about-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 1rem; }
+        .about-hero p { font-size: 1.3rem; opacity: 0.95; max-width: 800px; margin: 0 auto; }
+
+        .about-container {
+            max-width: 950px;
+            margin: 0 auto 4rem;
+            background: #ffffff;
+            padding: 3.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .section-block { margin-bottom: 3.5rem; }
+        .section-block h2 {
+            font-size: 1.8rem;
+            color: #0e6251;
+            margin-bottom: 1.2rem;
+            border-right: 5px solid #d4ac0d;
+            padding-right: 15px;
+            font-weight: 800;
+        }
+
+        .section-block p { font-size: 1.1rem; color: #333; margin-bottom: 1.2rem; text-align: justify; }
+
+        .category-detail-card {
+            background-color: #f4fdfb;
+            border: 1px solid #a3e4d7;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .category-detail-card h3 {
+            color: #0e6251;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .category-detail-card ul {
+            padding-right: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .summary-box {
+            background-color: #e8f8f5;
+            border-right: 6px solid #0e6251;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
+        .summary-box h3 { color: #0e6251; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 800; }
+
+        footer {
+            background-color: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-container { padding: 1.8rem; margin: 1rem; }
+            .about-hero h1 { font-size: 2rem; }
+            .navbar { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="{{ site.baseurl }}/">🦜 طيور العرب</a></div>
+            <ul class="main-pages-menu">
+                <li><a href="{{ site.baseurl }}/">الرئيسية</a></li>
+                <li><a href="{{ site.baseurl }}/about.html" class="active">من نحن</a></li>
+                <li><a href="{{ site.baseurl }}/contact.html">اتصل بنا</a></li>
+                <li><a href="{{ site.baseurl }}/privacy.html">سياسة الخصوصية</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <h1>عن منصة طيور العرب</h1>
+        <p>الموسوعة الرقمية الأولى المخصصة لعلم الطيور، وتربيتها، والعناية بها وفق أحدث المعايير العلمية والميدانية</p>
+    </section>
+
+    <main class="about-container">
+        
+        <!-- 1. المقدمة والرسالة -->
+        <div class="section-block">
+            <h2>1. رؤيتنا ورسالتنا في عالم الطيور</h2>
+            <p>
+                تأسست منصة <strong>طيور العرب</strong> لتسد الفجوة المعرفية في المحتوى العربي المتخصص بعلم الطيور (Ornithology) وتربية طيور الزينة والمغردة. نحن نؤمن بأن العناية بالطائر لا تقتصر على تقديم الماء والأكل فقط، بل هي مسؤولية علمية وأخلاقية تتطلب فهماً عميقاً للفسيولوجيا الطبيعية للطائر، ودوراته البيولوجية، واحتياجاته النفسية والبيئية.
+            </p>
+            <p>
+                نهدف إلى تقديم مرجع إلكتروني موثوق يخدم الهواة المبتدئين والمربين المحترفين على حد سواء، من خلال الامتناع عن الخرافات الشائعة وتوفير برامج غذائية وعلاجية مبرهنة ومجربة.
+            </p>
+        </div>
+
+        <!-- 2. التفصيل الشامل لجميع الأقسام -->
+        <div class="section-block">
+            <h2>2. التغطية الشاملة لأقسام التخصص</h2>
+            <p>
+                تم تقسيم منصتنا إلى خمسة محاور رئيسية، يغطي كل محور منها جانباً متخصصاً لضمان وصول القارئ للمعلومة الدقيقة بسرعة وسهولة:
+            </p>
+
+            <!-- عالم الكناري -->
+            <div class="category-detail-card">
+                <h3>🐤 عالم الكناري (Serinus canaria)</h3>
+                <p>
+                    يعتبر طائر الكناري ملك التغريد في الأقفاص، ونحن نكرس هذا القسم لدراسة كافة سلالاته العالمية (مثل الكناري السوري، الفلوت، الجلوستر، والحرشفي).
+                </p>
+                <ul>
+                    <li>تجهيز الأزواج ومراحل موسم التكاثر والإنتاج.</li>
+                    <li>دورات تغير الريش (القش) وكيفية التعامل معها بسلام.</li>
+                    <li>طرق تحفيز وتطوير التغريد وتدريب الفراخ.</li>
+                </ul>
+            </div>
+
+            <!-- طائر الحسون -->
+            <div class="category-detail-card">
+                <h3>🌾 طائر الحسون (Carduelis carduelis)</h3>
+                <p>
+                    الحسون أو "الأنيق" هو طائر ذو حساسية عالية يتطلب عناية فائقة. نغطي في هذا القسم كل ما يتعلق بتربيته وتثبيته داخل السلاكات.
+                </p>
+                <ul>
+                    <li>النظام الغذائي المتوازن من البذور المستنبتة والنيجر.</li>
+                    <li>وقاية الحسون من مرض الكوكسبديا ومشاكل الأمعاء.</li>
+                    <li>تطوير التغريد وقراءة لغة الجسد لدى الحسون.</li>
+                </ul>
+            </div>
+
+            <!-- طيور الببغاء -->
+            <div class="category-detail-card">
+                <h3>🦜 طيور الببغاء (Psittaciformes)</h3>
+                <p>
+                    من البادجي الصغير والكوكاتيل وصولاً إلى المكاو والرمادي الأفريقي، يركز هذا القسم على الذكاء العالي والسلوك السلوكي للببغاوات.
+                </p>
+
+                <ul>
+                    <li>التدريب والتأليف والتغلب على مشكلة العض الخوف.</li>
+                    <li>نظام "الباروت بيليه" والوجبات الطازجة لرفع العمر الافتراضي.</li>
+                    <li>توفير الألعاب والأثاث البيئي للحد من نتف الريش والتوتر.</li>
+                </ul>
+            </div>
+
+            <!-- عالم الطيور العامة -->
+            <div class="category-detail-card">
+                <h3>🦅 عالم الطيور العامة البرية والمائية</h3>
+                <p>
+                    توسع موسوعي يدرس كافة أنواع الطيور حول العالم، بدءاً من الجوارح كالمهدورة والصقور، وصولاً إلى الطيور المائية والمهاجرة.
+                </p>
+                <ul>
+                    <li>أنماط الهجرة الموسمية وتكيف الطيور مع البيئات المختلفة.</li>
+                    <li>سلوكيات بناء الأعشاش والدفاع عن المناطق.</li>
+                    <li>دور الطيور في الحفاظ على التوازن البيئي والمصادر الطبيعية.</li>
+                </ul>
+            </div>
+
+            <!-- الطيور والصحة -->
+            <div class="category-detail-card">
+                <h3>🩺 الطيور والصحة والأطباء البيطريون</h3>
+                <p>
+                    الركن الصيدلاني والوقائي لرفع الكفاءة المناعية للطيور والتعامل مع حالات الطوارئ الطبية.
+                </p>
+                <ul>
+                    <li>جدول التطعيمات والمكملات الفيتامينية والأحماض الأمينية.</li>
+                    <li>تشخيص أعراض الأمراض البكتيرية، الفطرية، والطفيلية.</li>
+                    <li>إعداد غرف الحجر الصحي وتقديم الإسعافات الأولية للكسور والجروح.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. الخلاصة والنهج -->
+        <div class="summary-box">
+            <h3>3. خلاصة وعهد المنصة</h3>
+            <p>
+                إن هدفنا في <strong>طيور العرب</strong> ليس مجرد نشر المقالات، بل بناء مجتمع عربي واعٍ يمتلك الثقافة الكافية لحماية الطيور ورعايتها بأفضل الطرق. نحن نلتزم بالحديث العلمي المُبسط، والتحديث المستمر للمعلومات لتبقى منصتنا هي المرجع القياسي والترند الأول لكل مهتم بعالم الطيور في الوطن العربي.
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 طيور العرب - جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
