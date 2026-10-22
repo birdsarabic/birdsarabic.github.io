@@ -1,11 +1,9 @@
----
----
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طيور العرب | عالم الطيور والبيئة الطبيعية</title>
+    <title>{{ page.title }} | طيور العرب</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -16,7 +14,6 @@
             --accent-color: #d4ac0d;
             --bg-color: #f8f9fa;
             --text-color: #2c3e50;
-            --card-bg: #ffffff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,12 +22,11 @@
             font-family: 'Tajawal', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.8;
+            line-height: 2;
             direction: rtl;
             text-align: right;
         }
 
-        /* الهيدر والشعار من اليمين */
         header {
             background-color: var(--primary-color);
             color: white;
@@ -39,7 +35,7 @@
         }
 
         .navbar {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -57,99 +53,93 @@
             gap: 0.5rem;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--accent-color); }
-
-        /* القسم الترحيبي */
-        .hero {
-            background: linear-gradient(rgba(14, 98, 81, 0.88), rgba(14, 98, 81, 0.88)), 
-                        url('https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=80') center/cover;
-            color: white;
-            text-align: center;
-            padding: 4rem 1rem;
-        }
-
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 800; }
-        .hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto; opacity: 0.95; }
-
-        /* الحاوية والمقالات */
-        .container {
-            max-width: 1100px;
+        .post-container {
+            max-width: 850px;
             margin: 3rem auto;
-            padding: 0 1rem;
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .section-title {
-            font-size: 1.8rem;
+        .post-title {
+            font-size: 2.2rem;
             color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: 800;
+        }
+
+        .post-meta {
+            font-size: 0.9rem;
+            color: #7f8c8d;
             margin-bottom: 2rem;
-            border-bottom: 3px solid var(--primary-color);
-            display: inline-block;
-            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            transition: transform 0.3s;
-            border-top: 4px solid var(--primary-color);
+        /* تنسيق المحتوى الداخلي للمقال من اليمين */
+        .post-content {
+            direction: rtl;
             text-align: right;
         }
 
-        .card:hover { transform: translateY(-5px); }
-
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content { padding: 1.5rem; }
-
-        .card-date {
-            background-color: #e8f8f5;
+        .post-content h1, .post-content h2, .post-content h3 {
             color: var(--primary-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 5px;
-            font-size: 0.85rem;
+            margin: 2rem 0 1rem;
             font-weight: 700;
-            display: inline-block;
-            margin-bottom: 0.8rem;
         }
 
-        .card-title a {
-            font-size: 1.3rem;
-            color: #1a252f;
-            text-decoration: none;
+        .post-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
             display: block;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-            line-height: 1.4;
         }
 
-        .card-title a:hover { color: var(--accent-color); }
+        .post-content ul, .post-content ol {
+            padding-right: 2rem;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
 
-        .card-desc { font-size: 0.95rem; color: #555; line-height: 1.6; }
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .post-content blockquote {
+            background-color: #e8f8f5;
+            border-right: 5px solid var(--primary-color);
+            border-left: none;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .post-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            direction: rtl;
+        }
+
+        .post-content th, .post-content td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+
+        .post-content th {
+            background-color: var(--primary-color);
+            color: white;
+        }
 
         footer {
             background-color: #1a252f;
@@ -171,41 +161,18 @@
                     <span>طيور العرب</span>
                 </a>
             </div>
-            <ul class="nav-links">
-                <li><a href="{{ site.baseurl }}/">الرئيسية</a></li>
-                <li><a href="#">عن المدونة</a></li>
-            </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>مرحباً بكم في مدونة طيور العرب</h1>
-        <p>المجتمع العربي الأول المختص في العناية بالطيور، تربيتها، واكتشاف أنواعها البيئية المختلفة.</p>
-    </section>
-
-    <main class="container">
-        <h2 class="section-title">أحدث المقالات المضافة</h2>
-        
-        <div class="grid">
-            {% for post in site.posts %}
-            <article class="card">
-                {% if post.image %}
-                <img src="{{ post.image }}" alt="{{ post.title }}" class="card-img">
-                {% endif %}
-                <div class="card-content">
-                    <span class="card-date">📅 {{ post.date | date: "%Y-%m-%d" }}</span>
-                    <h3 class="card-title">
-                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                    </h3>
-                    <p class="card-desc">
-                        {{ post.excerpt | strip_html | truncatewords: 25 }}
-                    </p>
-                </div>
-            </article>
-            {% else %}
-            <p style="grid-column: 1/-1;">لا توجد مقالات مضافة حالياً.</p>
-            {% endfor %}
+    <main class="post-container">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+            📅 تاريخ النشر: {{ page.date | date: "%Y-%m-%d" }}
         </div>
+        
+        <article class="post-content">
+            {{ content }}
+        </article>
     </main>
 
     <footer>
