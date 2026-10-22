@@ -1,11 +1,6 @@
 title: "طيور العرب"
 description: "مدونة متخصصة في العناية بالطيور وتربيتها"
 lang: "ar"
-direction: "rtl"
 
-# إيقاف استخدام أي سمة افتراضية قديمة تفرض تنسيق LTR
-theme: null
-
-# إعدادات الروابط والمستودع
-permalink: /:categories/:title/
-markdown: kramdown
+# المحافظة على الروابط الافتراضية المستقرة
+permalink: /:year/:month/:day/:title.html
