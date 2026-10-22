@@ -19,10 +19,10 @@
             --card-bg: #ffffff;
         }
 
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -30,10 +30,11 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
-            direction: rtl; /* اتجاه الصفحة من اليمين إلى اليسار */
-            text-align: right; /* محاذاة النصوص لليمين */
+            direction: rtl;
+            text-align: right;
         }
 
+        /* الهيدر الأخضر */
         header {
             background-color: var(--primary-color);
             color: white;
@@ -49,19 +50,32 @@
             align-items: center;
         }
 
-        .logo { 
-            font-size: 1.8rem; 
-            font-weight: 800; 
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
         }
 
+        /* واجهة الهيرو الخضراء */
         .hero {
             background: linear-gradient(rgba(14, 98, 81, 0.85), rgba(14, 98, 81, 0.85)), 
                         url('https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=80') center/cover;
             color: white;
-            text-align: center; /* تجميع نص الهيدر الرئيسي في المنتصف */
-            padding: 3rem 1rem;
+            text-align: center;
+            padding: 4rem 1rem;
         }
 
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* شبكة المقالات */
         .container {
             max-width: 1100px;
             margin: 3rem auto;
@@ -69,7 +83,6 @@
         }
 
         .section-title {
-            text-align: right;
             font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 2rem;
@@ -87,22 +100,29 @@
         .card {
             background-color: var(--card-bg);
             border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: transform 0.3s;
-            text-align: right; /* ضمان محاذاة محتوى المقال لليمين */
+            border-top: 4px solid var(--primary-color);
         }
 
-        .card:hover { 
-            transform: translateY(-5px); 
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            padding: 1.5rem;
         }
 
         .card-date {
-            font-size: 0.85rem;
+            background-color: #e8f8f5;
             color: var(--primary-color);
-            font-weight: bold;
-            display: block;
-            margin-bottom: 0.5rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 0.8rem;
         }
 
         .card-title a {
@@ -110,17 +130,18 @@
             color: #1a252f;
             text-decoration: none;
             display: block;
-            margin: 0.5rem 0;
+            margin-bottom: 0.8rem;
             font-weight: 700;
         }
 
-        .card-title a:hover { 
-            color: var(--accent-color); 
+        .card-title a:hover {
+            color: var(--accent-color);
         }
 
-        .card-excerpt {
-            color: #555;
+        .card-desc {
             font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
         }
 
         footer {
@@ -142,7 +163,7 @@
 
     <section class="hero">
         <h1>مرحباً بكم في مدونة طيور العرب</h1>
-        <p>مساحتكم الخاصة لاكتشاف عالم الطيور والعناية بها.</p>
+        <p>مساحتكم الخاصة لاكتشاف عالم الطيور في الوطن العربي والتعرف على أسرار العناية بها.</p>
     </section>
 
     <main class="container">
@@ -151,14 +172,22 @@
         <div class="grid">
             {% for post in site.posts %}
             <article class="card">
-                <span class="card-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                <h3 class="card-title">
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                </h3>
-                <p class="card-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                <div class="card-content">
+                    <span class="card-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                    <h3 class="card-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="card-desc">
+                        {% if post.excerpt %}
+                            {{ post.excerpt | strip_html | truncatewords: 25 }}
+                        {% else %}
+                            اضغط على العنوان لقراءة المقال كاملاً...
+                        {% endif %}
+                    </p>
+                </div>
             </article>
             {% else %}
-            <p style="text-align: right; grid-column: 1/-1;">لا يوجد مقالات حتى الآن.</p>
+            <p style="grid-column: 1/-1;">لا توجد مقالات حتى الآن.</p>
             {% endfor %}
         </div>
     </main>
